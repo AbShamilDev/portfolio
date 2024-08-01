@@ -15,7 +15,6 @@ function App() {
   return (
     <div className="App">
       <div className="main_screen">
-        {" "}
         <div className="bgshadow red"></div>
         <div className="bgshadow blue"></div>
         <span className="site_label">{"ASHDev />"}</span>
@@ -23,7 +22,7 @@ function App() {
           <h1>FRONTEND</h1>
           <div className="subtext_wrapper">
             <p className="subtext">Developer</p>
-            {showAllow && <AnimatedChip text="JUNIOR" duration={2.5} fontSize={40} />}
+            {showAllow && <AnimatedChip text="JUNIOR" duration={2.5} />}
           </div>
         </div>
         <MyStackList />

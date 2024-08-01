@@ -1,7 +1,7 @@
 .stack_container {
   position: absolute;
   padding: 10px 22px;
-  top: 100dvh;
+  top: 100lvh;
   left: calc(12% - 50px);
   border-radius: 30px;
   width: 745px;
@@ -79,5 +79,35 @@
 
   to {
     top: calc(100dvh - 320px);
+  }
+}
+
+@media (max-width: 1000px) {
+  .stack_container {
+    width: 340px;
+    top: 220px;
+    z-index: 101;
+    height: 610px;
+    background-color: #383838c0;
+    transform: scale(0.6);
+    left: calc(100dvw - 40px);
+    padding-right: 50px;
+
+    .skills {
+      margin-top: 20px;
+      gap: 5px;
+      justify-content: center;
+      grid-template-areas: "next next" "react redux" "js ts" "sass git" "html css";
+    }
+  }
+
+  @keyframes stack_list_appear {
+    60% {
+      left: 150px;
+    }
+
+    to {
+      left: 170px;
+    }
   }
 }

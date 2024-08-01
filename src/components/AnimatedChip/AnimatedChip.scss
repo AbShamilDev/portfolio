@@ -7,6 +7,7 @@
     font-family: Fira Code, sans-serif;
     overflow: hidden;
     white-space: nowrap;
+    font-size: 40px;
   }
 }
 
@@ -38,5 +39,15 @@
   }
   to {
     border-color: white;
+  }
+}
+
+@media (max-width: 1000px) {
+  .chip {
+    padding: 2px 10px;
+
+    .chip_text {
+      font-size: 25px;
+    }
   }
 }

@@ -1,14 +1,6 @@
 import "./AnimatedChip.scss";
 
-const AnimatedChip = ({
-  text,
-  duration,
-  fontSize,
-}: {
-  text: string;
-  duration: number;
-  fontSize: number;
-}) => {
+const AnimatedChip = ({ text, duration }: { text: string; duration: number }) => {
   return (
     <div
       className="chip"
@@ -19,9 +11,10 @@ const AnimatedChip = ({
           animation: `cursor 1s ${Math.ceil(duration)} forwards, printed_text ${duration}s steps(${
             text.length
           })`,
-          fontSize,
+
           width: text.length + "ch",
         }}
+        className="chip_text"
       >
         {text}
       </p>
