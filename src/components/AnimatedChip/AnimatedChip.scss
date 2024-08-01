@@ -1,0 +1,42 @@
+.chip {
+  padding: 7px 24px;
+  border-radius: 50px;
+  border: 1px solid transparent;
+
+  p {
+    font-family: Fira Code, sans-serif;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+}
+
+@keyframes cursor {
+  0% {
+    border-right: 3px solid transparent;
+  }
+  50% {
+    border-color: white;
+  }
+  99% {
+    border-right: 3px solid transparent;
+  }
+  100% {
+    border-color: transparent;
+    border: none;
+  }
+}
+
+@keyframes printed_text {
+  from {
+    width: 0;
+  }
+}
+
+@keyframes show_border {
+  from {
+    border-color: transparent;
+  }
+  to {
+    border-color: white;
+  }
+}

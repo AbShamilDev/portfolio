@@ -1,0 +1,83 @@
+.stack_container {
+  position: absolute;
+  padding: 10px 22px;
+  top: 100dvh;
+  left: calc(12% - 50px);
+  border-radius: 30px;
+  width: 745px;
+  height: 350px;
+  background-color: #3838388a;
+  animation: stack_list_appear 1s 3s ease forwards;
+
+  .stack_header {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+
+    p {
+      margin-left: 10px;
+      font-size: 26px;
+      color: #a3a3a3;
+    }
+
+    span {
+      width: 17px;
+      height: 17px;
+      border-radius: 10px;
+    }
+
+    .red {
+      background: #ff3b30;
+    }
+    .yellow {
+      background: #ffcc00;
+    }
+    .green {
+      background: #4cd964;
+    }
+  }
+
+  .skills {
+    display: grid;
+    grid-template-areas: "next next react js ts" "sass git redux html css";
+    align-items: center;
+
+    .nextjs {
+      grid-area: next;
+    }
+    .react {
+      grid-area: react;
+    }
+    .js {
+      grid-area: js;
+    }
+    .ts {
+      grid-area: ts;
+    }
+    .sass {
+      grid-area: sass;
+    }
+    .git {
+      grid-area: git;
+    }
+    .redux {
+      grid-area: redux;
+    }
+    .html {
+      grid-area: html;
+    }
+    .css {
+      grid-area: css;
+    }
+  }
+}
+
+@keyframes stack_list_appear {
+  60% {
+    top: calc(100dvh - 330px);
+  }
+
+  to {
+    top: calc(100dvh - 320px);
+  }
+}
