@@ -1,6 +1,6 @@
-import "./AnimatedChip.scss";
+import "./AnimatedChip.style.scss";
 
-const AnimatedChip = ({ text, duration }: { text: string; duration: number }) => {
+export default function AnimatedChip({ text, duration }: { text: string; duration: number }) {
   return (
     <div
       className="chip"
@@ -20,6 +20,4 @@ const AnimatedChip = ({ text, duration }: { text: string; duration: number }) =>
       </p>
     </div>
   );
-};
-
-export default AnimatedChip;
+}

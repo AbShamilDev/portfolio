@@ -6,7 +6,8 @@
   border-radius: 30px;
   width: 745px;
   height: 350px;
-  background-color: #3838388a;
+  background: #404040a1;
+  box-shadow: 4px 4px 20px 0 #00000040;
   animation: stack_list_appear 1s 3s ease forwards;
 
   .stack_header {

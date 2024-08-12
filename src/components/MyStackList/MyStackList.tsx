@@ -1,6 +1,6 @@
-import "./MyStackList.scss";
+import "./MyStackList.style.scss";
 
-const MyStackList = () => {
+export default function MyStackList() {
   return (
     <div className="stack_container">
       <div className="stack_header">
@@ -22,6 +22,4 @@ const MyStackList = () => {
       </div>
     </div>
   );
-};
-
-export default MyStackList;
+}

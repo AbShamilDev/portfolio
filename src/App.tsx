@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import "./App.scss";
 import AnimatedChip from "./components/AnimatedChip/AnimatedChip";
 import MyStackList from "./components/MyStackList/MyStackList";
+import Header from "./components/Header/Header";
 
 function App() {
   const [showAllow, setShowAllow] = useState<boolean>(false);
@@ -14,15 +15,17 @@ function App() {
 
   return (
     <div className="App">
+      <Header />
+      <div className="progress_line"></div>
       <div className="main_screen">
         <div className="bgshadow red"></div>
         <div className="bgshadow blue"></div>
-        <span className="site_label">{"ASHDev />"}</span>
+
         <div className="main_text">
           <h1>FRONTEND</h1>
           <div className="subtext_wrapper">
             <p className="subtext">Developer</p>
-            {showAllow && <AnimatedChip text="JUNIOR" duration={2.5} />}
+            {showAllow && <AnimatedChip text="JUNIOR" duration={1} />}
           </div>
         </div>
         <MyStackList />

@@ -9,13 +9,6 @@
     overflow: hidden;
     background: #000;
 
-    .site_label {
-      position: relative;
-      z-index: 100;
-      filter: drop-shadow(1px 1px #791c90);
-      font-size: 26px;
-    }
-
     .main_text {
       position: absolute;
       top: calc(100dvh / 2 - 100px);
@@ -46,7 +39,7 @@
 
     .me_photo {
       position: absolute;
-      right: calc(20% - 80px);
+      right: calc(40% - 500px);
       width: 500px;
       border-radius: 30px;
       opacity: 0;
