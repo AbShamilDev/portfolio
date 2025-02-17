@@ -10,22 +10,21 @@ function App() {
   useEffect(() => {
     setTimeout(() => {
       setShowAllow(true);
-    }, 1600);
+    }, 3600);
   }, []);
 
   return (
     <div className="App">
       <Header />
-      <div className="progress_line"></div>
-      <div className="main_screen">
+
+      <div id="main_screen">
         <div className="bgshadow red"></div>
         <div className="bgshadow blue"></div>
-
         <div className="main_text">
           <h1>FRONTEND</h1>
           <div className="subtext_wrapper">
             <p className="subtext">Developer</p>
-            {showAllow && <AnimatedChip text="JUNIOR" duration={1} />}
+            {showAllow && <AnimatedChip text="middle" />}
           </div>
         </div>
         <MyStackList />

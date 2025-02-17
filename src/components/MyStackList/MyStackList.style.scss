@@ -1,25 +1,19 @@
 .stack_container {
   position: absolute;
   padding: 10px 22px;
-  top: 100lvh;
   left: calc(12% - 50px);
   border-radius: 30px;
   width: 745px;
+  bottom: -360px;
   height: 350px;
   background: #404040a1;
   box-shadow: 4px 4px 20px 0 #00000040;
-  animation: stack_list_appear 1s 3s ease forwards;
+  animation: stack_list_appear 3s 2s ease forwards;
 
   .stack_header {
     display: flex;
     align-items: baseline;
     gap: 10px;
-
-    p {
-      margin-left: 10px;
-      font-size: 26px;
-      color: #a3a3a3;
-    }
 
     span {
       width: 17px;
@@ -27,59 +21,71 @@
       border-radius: 10px;
     }
 
+    span,
+    p {
+      margin-left: -10px;
+      opacity: 0;
+      animation: skills_header_appear 0.5s ease forwards;
+    }
+
     .red {
       background: #ff3b30;
+      animation-delay: 3.1s;
     }
     .yellow {
       background: #ffcc00;
+      animation-delay: 3.2s;
     }
     .green {
       background: #4cd964;
+      animation-delay: 3.3s;
+    }
+
+    p {
+      font-size: 26px;
+      color: #a3a3a3;
+      animation-delay: 3.6s;
+      padding-left: 10px;
     }
   }
 
   .skills {
     display: grid;
-    grid-template-areas: "next next react js ts" "sass git redux html css";
+    grid-template-areas:
+      "nextjs nextjs react js ts"
+      "sass git redux html css";
     align-items: center;
+    justify-items: center;
 
-    .nextjs {
-      grid-area: next;
+    img {
+      opacity: 0%;
+      margin-top: 100px;
+      animation: logo_appear 1s 4s ease-out forwards;
     }
-    .react {
-      grid-area: react;
-    }
-    .js {
-      grid-area: js;
-    }
-    .ts {
-      grid-area: ts;
-    }
-    .sass {
-      grid-area: sass;
-    }
-    .git {
-      grid-area: git;
-    }
-    .redux {
-      grid-area: redux;
-    }
-    .html {
-      grid-area: html;
-    }
-    .css {
-      grid-area: css;
-    }
+  }
+}
+
+@keyframes logo_appear {
+  to {
+    opacity: 100%;
+    margin-top: 0;
+  }
+}
+
+@keyframes skills_header_appear {
+  to {
+    opacity: 100%;
+    margin-left: 0;
   }
 }
 
 @keyframes stack_list_appear {
   60% {
-    top: calc(100dvh - 330px);
+    bottom: -20px;
   }
 
   to {
-    top: calc(100dvh - 320px);
+    bottom: -50px;
   }
 }
 

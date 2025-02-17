@@ -1,23 +1,47 @@
+import { useEffect, useState } from "react";
 import "./AnimatedChip.style.scss";
 
-export default function AnimatedChip({ text, duration }: { text: string; duration: number }) {
-  return (
-    <div
-      className="chip"
-      style={{ animation: `show_border 0.3s ease ${duration + 0.1}s forwards` }}
-    >
-      <p
-        style={{
-          animation: `cursor 1s ${Math.ceil(duration)} forwards, printed_text ${duration}s steps(${
-            text.length
-          })`,
+const AnimatedChip = ({ text }: { text: string }) => {
+  const [fontLoaded, setFontLoaded] = useState(false);
+  const [renderText, setRenderText] = useState("");
 
-          width: text.length + "ch",
-        }}
-        className="chip_text"
-      >
-        {text}
-      </p>
+  useEffect(() => {
+    document.fonts.ready.then(() => {
+      setFontLoaded(true);
+    });
+  }, []);
+
+  useEffect(() => {
+    if (fontLoaded && renderText.length < text.length) {
+      setTimeout(
+        () => setRenderText((prev) => prev + text[prev.length]),
+        renderText.length === 0 ? 2000 : 180
+      );
+    }
+  }, [renderText, fontLoaded]);
+
+  return (
+    <div className="chipWrapper">
+      <div
+        className="chip"
+        style={
+          renderText.length === text.length ? { animation: "show_mask 1s 1s ease forwards" } : {}
+        }
+      />
+      <div className="textContainer">
+        <p
+          className="chip_text"
+          style={
+            renderText.length === text.length
+              ? { animation: "text_disappear 1s 1s ease forwards" }
+              : {}
+          }
+        >
+          {renderText}
+        </p>
+      </div>
     </div>
   );
-}
+};
+
+export default AnimatedChip;
